@@ -18,7 +18,7 @@
     "html-webpack-plugin": "5.3.1",
     "node-sass": "6.0.0",
     "request-promise": "4.2.6",
-    "sass-loader": "12.0.0",
+    "sass-loader": "10.2.0",
     "vue": "2.6.13",
     "vue-router": "3.5.1",
     "vue-weathericons": "0.0.3",

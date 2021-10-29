@@ -1,4 +1,5 @@
-<template><component :is="currentView"></component>
+<template>
+  <component :is="currentView" />
 </template>
 
 <script>
@@ -14,7 +15,7 @@ const routes = [
 ];
 
 export default {
-  name: 'router-view',  
+  name: 'RouterView',  
   data() {
     return {  
       currentView: {}  

@@ -1,19 +1,22 @@
 <template>
   <div class="options-button">
-    <img src="/img/settings.svg" v-on:click="options">
+    <img
+      src="/img/settings.svg"
+      @click="options"
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: 'OptionsButton',
+  props: {
+    onClick: Function
+  },
   methods: {
     options: function() {
       this.onClick();
     }
-  },
-  props: {
-    onClick: Function
   }
 }
 </script>

@@ -1,8 +1,18 @@
 <template>
   <article :style="{gridArea: name}">
-    <OptionsButton v-bind="{onClick: showOptions}" v-if="options.length > 0"></OptionsButton>
-    <div v-if="!optionsMode" :is="item.name" :userData="userData"></div>
-    <OptionsCard v-if="optionsMode" v-bind="{options, onSubmit, userData}"></OptionsCard>
+    <OptionsButton
+      v-if="options.length > 0"
+      v-bind="{onClick: showOptions}"
+    />
+    <component
+      :is="item.name"
+      v-if="!optionsMode"
+      :user-data="userData"
+    />
+    <OptionsCard
+      v-if="optionsMode"
+      v-bind="{options, onSubmit, userData}"
+    />
   </article>
 </template>
 
@@ -13,6 +23,15 @@ import components from '../components'
 
 export default {
   name: 'Block',
+  components: {
+    ...components,
+    OptionsButton,
+    OptionsCard
+  },
+  props: {
+    name: String,
+    item: Object
+  },
   data () {
     const userData = this.$store.state.components[this.item.name];
     return {
@@ -40,15 +59,6 @@ export default {
       }
       this.optionsMode = false;
     }
-  },
-  props: {
-    name: String,
-    item: Object
-  },
-  components: {
-    ...components,
-    OptionsButton,
-    OptionsCard
   }
 }
 </script>

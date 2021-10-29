@@ -2,7 +2,12 @@
   <parent>
     <div>
       <ul>
-        <li v-for="(item, index) in Array(100).fill('test')" v-bind:key="index">{{ item }}-{{ index }}</li>
+        <li
+          v-for="(item, index) in Array(100).fill('test')"
+          :key="index"
+        >
+          {{ item }}-{{ index }}
+        </li>
       </ul>
     </div>
   </parent>
@@ -13,11 +18,11 @@
 import parent from './component.vue';
 
 export default {
-  extends: parent,
-  name: 'list',
+  name: 'List',
   components: {
     parent
   },
+  extends: parent,
   data () {
     return {
       time: new Date(),

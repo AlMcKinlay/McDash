@@ -8,7 +8,7 @@
 <script>
 
 export default {
-  name: 'countdown',
+  name: 'Countdown',
   options () {
     return [
       {
@@ -27,6 +27,9 @@ export default {
         label: "Exclude Weekends"
       }
     ]
+  },
+  props: {
+    userData: Object
   },
   data () {
     return {
@@ -49,9 +52,6 @@ export default {
     this.dayChecker = setInterval(function ticker() {
       that.today = new Date();
     }, 60000);
-  },
-  props: {
-    userData: Object
   }
 }
 </script>

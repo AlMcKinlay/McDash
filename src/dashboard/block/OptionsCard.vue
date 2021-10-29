@@ -1,24 +1,43 @@
 <template>
   <div class="options">
-
-    <div v-for="option in options"
-        :key="option.name" :id="option.name">
+    <div
+      v-for="option in options"
+      :id="option.name"
+      :key="option.name"
+    >
       <label>{{ option.label }}</label>
       <input 
-        v-bind:type="getType(option)" 
         v-model="savedOptions[getId(option.name)]" 
+        :type="getType(option)" 
         true-value="true"
-        false-value="false" />
+        false-value="false"
+      >
     </div>
 
-    <input type="submit" class="submit" value="Submit" v-on:click="submit">
-    <input type="submit" class="cancel" value="Cancel" v-on:click="cancel">
+    <input
+      type="submit"
+      class="submit"
+      value="Submit"
+      @click="submit"
+    >
+    <input
+      type="submit"
+      class="cancel"
+      value="Cancel"
+      @click="cancel"
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: 'OptionsCard',
+  props: {
+    name: String,
+    options: Array,
+    onSubmit: Function,
+    userData: Object
+  },
   data () {
     const savedOptions = {
       ...this.userData
@@ -48,12 +67,6 @@ export default {
     updateFormData: function(name, value) {
       this.$set(this.savedOptions, this.getId(name), value);
     }
-  },
-  props: {
-    name: String,
-    options: Array,
-    onSubmit: Function,
-    userData: Object
   }
 }
 </script>

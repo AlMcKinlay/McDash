@@ -11,7 +11,7 @@ function padTime(time) {
 }
 
 export default {
-  name: 'clock',
+  name: 'Clock',
   data () {
     return {
       time: new Date()

@@ -1,21 +1,30 @@
 <template>
   <div class="wrapper">
     <main>
-        <h1>McDash Options page</h1>
+      <h1>McDash Options page</h1>
 
-        <div class="layout">
-          <textarea id="layout" type="text" v-model="layout"> </textarea>
-        </div>
-        <div class="save">
-        <button id="permissions" v-on:click="saveSettings">Save settings</button>
-        </div>
+      <div class="layout">
+        <textarea
+          id="layout"
+          v-model="layout"
+          type="text"
+        />
+      </div>
+      <div class="save">
+        <button
+          id="permissions"
+          @click="saveSettings"
+        >
+          Save settings
+        </button>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'options',
+  name: 'Options',
   data() {
 
     return {

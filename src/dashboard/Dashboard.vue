@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper">
-    <main v-bind:style="{'grid-template-areas': this.$store.state.layout}">
+    <main :style="{'grid-template-areas': $store.state.layout}">
       <Block 
         v-for="item in layout" 
         :key="item.id"
         :class="item.name + '-container'"
         :name="item.name"
         :item="item"
-        :style="getStyles(item)">
-        </Block>
+        :style="getStyles(item)"
+      />
     </main>
   </div>
 </template>
@@ -20,7 +20,7 @@ let id = 0;
 const layout = Object.keys(components).map((name) => ({id: id++, name, ...components[name].defaults, ...components[name]}))
 
 export default {
-  name: 'dashboard',
+  name: 'Dashboard',
   components: {
     ...components,
     Block

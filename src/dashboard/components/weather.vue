@@ -1,6 +1,9 @@
 <template>
   <div class="weather">
-    <weather-icon class="icon" :icon="icon" />
+    <weather-icon
+      class="icon"
+      :icon="icon"
+    />
     <span> {{ weather.currently.summary }}</span>
   </div>
 </template>
@@ -43,7 +46,7 @@ function updateWeather() {
 }
 
 export default {
-  name: 'weather',
+  name: 'Weather',
   components: {
     WeatherIcon
   },
@@ -61,6 +64,9 @@ export default {
       }
     ]
   },
+  props: {
+    userData: Object
+  },
   data () {
     return {
       weather: {
@@ -77,9 +83,6 @@ export default {
   created: function created() {
     updateWeather.bind(this)();
     this.updater = setInterval(updateWeather.bind(this), 1000 * 60 * 10);
-  },
-  props: {
-    userData: Object
   }
 }
 </script>

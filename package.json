@@ -19,10 +19,10 @@
     "node-sass": "6.0.1",
     "request-promise": "4.2.6",
     "sass-loader": "10.2.1",
-    "vue": "2.6.14",
-    "vue-router": "3.5.3",
+    "vue": "3.2.30",
+    "vue-router": "4.0.12",
     "vue-weathericons": "0.0.3",
-    "vuex": "3.6.2",
+    "vuex": "4.0.2",
     "vuex-persistedstate": "4.1.0",
     "weathericons": "2.1.0"
   },

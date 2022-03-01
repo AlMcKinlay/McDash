@@ -20,7 +20,7 @@
     "request-promise": "4.2.6",
     "sass-loader": "10.2.1",
     "vue": "3.2.31",
-    "vue-router": "4.0.12",
+    "vue-router": "4.0.13",
     "vue-weathericons": "0.0.3",
     "vuex": "4.0.2",
     "vuex-persistedstate": "4.1.0",
